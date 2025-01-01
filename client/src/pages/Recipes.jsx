@@ -7,7 +7,7 @@ const Recipes = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
         const getLatestItems = async () => {
-            const res = await axios.get('http://localhost:3000/api/all-items');
+            const res = await axios.get('https://tasty-tales-backend-sable.vercel.app/api/all-items');
             setItems(res.data);
         }
         getLatestItems();

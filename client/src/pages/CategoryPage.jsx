@@ -14,7 +14,7 @@ const CategoryPage = () => {
         const fetchedCategoryData = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`http://localhost:3000/api/categories/${category}`)
+                const response = await axios.get(`https://tasty-tales-backend-sable.vercel.app/api/categories/${category}`)
                 setItems(response.data);
             } catch (error) {
                 setError(error.message || "Error loading category")
