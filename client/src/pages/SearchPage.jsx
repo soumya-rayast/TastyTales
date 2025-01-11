@@ -3,6 +3,7 @@ import { IoSearchOutline } from 'react-icons/io5'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import Card from '../components/Card';
+import BACKEND_URL from '../api/constant';
 
 const SearchPage = () => {
     const searchText = useParams('');
@@ -22,7 +23,7 @@ const SearchPage = () => {
         const fetchItems = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`https://tasty-tales-backend-sable.vercel.app/api/items`, {
+                const response = await axios.get(`${BACKEND_URL}/api/items`, {
                     params: {
                         q: query
                     }

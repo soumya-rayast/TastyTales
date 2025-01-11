@@ -2,12 +2,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import CategoryWraper from '../components/CategoryWraper';
 import Card from '../components/Card';
+import BACKEND_URL from '../api/constant';
 
 const Recipes = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
         const getLatestItems = async () => {
-            const res = await axios.get('https://tasty-tales-backend-sable.vercel.app/api/all-items');
+            const res = await axios.get(`${BACKEND_URL}/api/all-items`);
             setItems(res.data);
         }
         getLatestItems();

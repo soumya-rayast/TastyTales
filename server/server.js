@@ -24,7 +24,6 @@ const CategoryRoutes = require('./src/routes/categoryRoute.js')
 app.use('/api', ItemRoutes);
 app.use('/api/', CategoryRoutes);
 
-
 app.listen(port, () => {
     console.log(`Server running at port ${port}`)
-})
+})  

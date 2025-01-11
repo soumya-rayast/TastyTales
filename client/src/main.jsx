@@ -12,6 +12,7 @@ import Recipes from './pages/Recipes.jsx'
 import Resources from './pages/Resources.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import Contactpage from './pages/Contactpage.jsx'
+import BACKEND_URL from './api/constant.js'
 
 
 const router = createBrowserRouter([
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: '/items/:id',
         element: <SingleProducts />,
-        loader: ({ params }) => fetch(`https://tasty-tales-backend-sable.vercel.app/api/items/${params.id}`)
+        loader: ({ params }) => fetch(`${BACKEND_URL}/api/items/${params.id}`)
       },
       {
         path: '/recipes',

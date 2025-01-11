@@ -1,22 +1,34 @@
-import React from 'react'
-import AboutImg from '../assets/about-image.jpg'
+import React from 'react';
+import AboutImg from '../assets/about-image.jpg';
+
 const AboutSection = () => {
     return (
-        <div className='overflow-hidden flex md:flex-row flex-col justify-between items-center sm:my-20 my-4 md:gap-20 gap-12 px-5 lg:px-10'>
-            <div className='text-start sm:w-1/2'>
-                <h2 className='text-3xl font-semibold text-secondary sm:text-5xl  sm:leading-relaxed'>Vegan foodie who loves to experiment with recipes</h2>
-                <p className='text-xl mt-4 text-[#5c5c5c]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, exercitationem necessitatibus. Repellat non suscipit ratione.</p>
-                <div className='lg:mt-0 lg:flex-shrink-0'>
-                    <div className='mt-12 inline-flex'>
-                        <button className='py-4 px-8 bg-btnCOlor text-white    w-full transition ease-in duration-200 text-center text-base font-semibold border border-[#9c702a] focus:outline-none rounded-lg'> View Recipe</button>
-                    </div>
+        <section className='overflow-hidden flex  flex-col md:flex-row justify-between items-center sm:my-20 my-8 md:gap-16 gap-8 px-6 mx-4 lg:px-16 bg-gradient-to-bl from-gray-100 to-white shadow-md rounded-lg'>
+            {/* Text Section */}
+            <div className='text-start md:w-1/2'>
+                <h2 className='text-4xl font-bold text-secondary sm:text-5xl leading-snug'>
+                    Vegan foodie who loves to experiment with recipes
+                </h2>
+                <p className='text-lg mt-4 text-gray-600'>
+                    Join me on a journey of culinary creativity, where I explore plant-based ingredients and whip up delightful recipes to inspire your inner chef.
+                </p>
+                <div className='mt-10'>
+                    <button className='py-3 px-6 bg-secondary text-white hover:bg-secondary-dark transition-all duration-200 text-lg font-medium rounded-lg shadow-md focus:outline-none'>
+                        Learn More
+                    </button>
                 </div>
             </div>
-            <div className='relative'>
-                <img src={AboutImg} alt="ABout Image" className='rounded-md' />
-            </div>
-        </div>
-    )
-}
 
-export default AboutSection
+            {/* Image Section */}
+            <div className='relative md:w-1/2'>
+                <img 
+                    src={AboutImg} 
+                    alt="About Me" 
+                    className='rounded-lg shadow-lg' 
+                />
+            </div>
+        </section>
+    );
+};
+
+export default AboutSection;

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import CategoryWraper from '../components/CategoryWraper'
 import axios from 'axios';
 import Card from '../components/Card';
+import BACKEND_URL from '../api/constant';
 
 const CategoryPage = () => {
     const { category } = useParams();
@@ -14,7 +15,7 @@ const CategoryPage = () => {
         const fetchedCategoryData = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`https://tasty-tales-backend-sable.vercel.app/api/categories/${category}`)
+                const response = await axios.get(`${BACKEND_URL}/api/categories/${category}`)
                 setItems(response.data);
             } catch (error) {
                 setError(error.message || "Error loading category")

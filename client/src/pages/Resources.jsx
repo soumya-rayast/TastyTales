@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 const blogData = [
   {
     title: "Te nulla oportere reprimique his dolorum",
@@ -29,33 +30,49 @@ const blogData = [
     category: "Convenire",
   },
 ];
+
 const Resources = () => {
   return (
-    <section className='px-6 lg:px-12 py-20'>
-      <h1 className='text-3xl text-center mb-8 font-semibold text-secondary sm:text-5xl sm:leading-relaxed'>Resources</h1>
-      <article className='py-6 sm:py-12'>
-        <div className='container p-6 mx-auto space-y-8'>
-          <div className='space-y-2 text-center'>
-            <h2 className='text-3xl font-bold '>Lorem ipsum dolor sit amet.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, laudantium.</p>
+    <section className="px-6 lg:px-12 py-20 ">
+      <h1 className="text-4xl text-center mb-12 font-extrabold text-secondary sm:text-5xl">
+        Resources
+      </h1>
+      <article>
+        <div className="container mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="text-2xl font-bold text-gray-800">
+              Explore our curated collection of blogs
+            </h2>
+            <p className="text-gray-600">
+              Dive into a world of knowledge with our handpicked resources.
+            </p>
           </div>
-          <div className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4'>
-            {
-              blogData.map((blog, index) => (
-                <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
-                  <img src={blog.imgSrc} alt={blog.title} className="w-full h-48 object-cover rounded-md" />
-                  <h3 className="text-2xl font-semibold mt-4">{blog.title}</h3>
-                  <p className="text-sm">{blog.date}</p>
-                  <p className="text-sm">{blog.views}</p>
-                  <p className="text-sm">{blog.category}</p>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {blogData.map((blog, index) => (
+              <div
+                key={index}
+                className="flex flex-col bg-white rounded-lg shadow hover:shadow-xl transition-shadow overflow-hidden"
+              >
+                <img
+                  src={blog.imgSrc}
+                  alt={blog.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-bold text-gray-800">{blog.title}</h3>
+                  <p className="text-sm text-gray-500 mt-2">{blog.date}</p>
+                  <p className="text-sm text-gray-500">{blog.views}</p>
+                  <p className="text-sm text-secondary mt-2 font-semibold">
+                    {blog.category}
+                  </p>
                 </div>
-              ))
-            }
+              </div>
+            ))}
           </div>
         </div>
       </article>
     </section>
-  )
-}
+  );
+};
 
-export default Resources
+export default Resources;

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useLoaderData } from 'react-router-dom'
-
 const SingleProducts = () => {
     const item = useLoaderData()
     useEffect(() => {
